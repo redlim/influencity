@@ -4,7 +4,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-html, body, #root {
+html, body {
   width: 100vw;
   height: 100vh;
 }
@@ -14,6 +14,15 @@ html, body, #root {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.items-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }

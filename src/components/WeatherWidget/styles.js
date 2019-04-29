@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 import { theme } from '../../utils/theme'
 
 export const CardWrapper = styled.figure`
-    margin: 0;
+    margin: 16px;
     border-radius: 16px;
     position: relative;
     overflow: hidden;
@@ -127,5 +127,14 @@ export const CardWrapper = styled.figure`
             opacity: 1;
             transform: translateX(0px);
         }
+    }
+    .additional-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
+    }
+    
+    .info-item {
+        margin: 0;
     }
 `

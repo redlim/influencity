@@ -10,3 +10,11 @@ export const getWeatherByName = (name) => {
             }).catch(err=> reject(err))
     })
 };
+
+export const getWeatherByGroupOfNames = (names) => {
+    const allWeatherPromises = [];
+    names.forEach((name)=> {
+        allWeatherPromises.push(getWeatherByName(name))
+    });
+    return Promise.all(allWeatherPromises);
+};
