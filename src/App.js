@@ -30,7 +30,7 @@ export default class App extends Component {
         return (
             <div className="App">
                 <InputWidget onClick={this.searchHandler}/>
-                <WeatherWidget city={currentCity} temp={currentTemp}/>
+                <WeatherWidget city={currentCity} temp={currentTemp} clouds={parseInt(currentTemp) < 15}/>
             </div>
         );
     }

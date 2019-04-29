@@ -2,49 +2,48 @@ import styled from 'styled-components/macro'
 import { theme } from '../../utils/theme'
 
 export const CardWrapper = styled.figure`
-    margin:  20px 5px;
-    border-radius: 20px;
+    margin: 0;
+    border-radius: 16px;
     position: relative;
     overflow: hidden;
-    width: 270px;
-    height: 270px;
+    width: 240px;
+    height: 240px;
     background-color: ${theme.colors.$color2};
     box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
     animation: appear 500ms ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    figcaption {
+        padding: 16px;
+    }
+    
     .temp {
-        position: absolute;
         font-family: 'Lato', sans-serif;
         font-weight:300;
         font-size:80px;
         color: ${theme.colors.$color3};
-        bottom: 0;
-        left: 35px;
         opacity: 0;
         transform: translateX(150px);
         animation: title-appear 500ms ease-out 500ms forwards;
-    }
-    .city {
-        position: absolute;
-        font-family: 'Lato', sans-serif;
-        font-weight:300;
-        font-size:28px;
-        color: lighten(${theme.colors.$color3}, 10%);
-        bottom: 0;
-        left: 35px;
-        animation: title-appear 1s ease-out 500ms forwards;
+        margin: 0;
     }
     
-    .weather-icon {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        top: 0;
-        float: right;
-        margin: 40px 40px 0 0;
-        animation: weather-icon-move 5s ease-in-out infinite;
+    .city {
+        font-family: 'Lato', sans-serif;
+        font-weight:300;
+        font-size: 28px;
+        color: ${theme.colors.$color3};
+        animation: title-appear 1s ease-out 500ms forwards;
+        margin: 0;
+        padding: 0 24px;
     }
-
+    
     .sun { 
+        align-self: flex-end;
+        margin: 32px 32px 0 0;
+        width: 50px;   
+        height: 50px;  
         background: ${theme.colors.$color4}; 
         border-radius: 50%; 
         box-shadow: rgba(255,255,0,0.1) 0 0 0 4px;
@@ -61,11 +60,13 @@ export const CardWrapper = styled.figure`
     }
 
     .cloud { 
-        margin-right:60px;
+        align-self: flex-end;
         background: ${theme.colors.$color6}; 
         border-radius: 20px; 
         width: 25px;
         height: 25px;
+        margin: 48px 48px 0 0;
+        animation: weather-icon-move 5s ease-in-out infinite;
         box-shadow: ${theme.colors.$color6} 24px -6px 0 2px, 
             ${theme.colors.$color6} 10px 5px 0 5px, 
             ${theme.colors.$color6} 30px 5px 0 2px, 
@@ -83,7 +84,6 @@ export const CardWrapper = styled.figure`
             left: 0;
             top: 31px;
             transform: rotate(30deg);
-            
             animation: rain 800ms ease-in-out infinite alternate;
         }
     }
