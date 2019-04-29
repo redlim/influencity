@@ -4,6 +4,7 @@ import InputWidget from './components/InputWidget'
 import * as Api from './api'
 import './App.css'
 import LabelItem from './components/LabelItem'
+import MapItem from './components/Map'
 export default class App extends Component {
 
     state= {
@@ -39,8 +40,7 @@ export default class App extends Component {
         const {currentTemp, currentCity, listOfTemps, averageTemp } = this.state;
         return (
             <div className="App">
-                <InputWidget onClick={this.searchHandler}/>
-                <LabelItem value={Math.round(averageTemp)} label={'Average Temp'}/>
+                <LabelItem value={Math.round(averageTemp)+'º'} label={'Average Temp'}/>
                 <section className="items-wrapper">
                     {listOfTemps.map((temp)=>{
                         console.log(temp);
@@ -53,6 +53,7 @@ export default class App extends Component {
                             clouds={parseInt(temp.main.temp) < 15}/>
                     })}
                 </section>
+                {/*<MapItem/>*/}
             </div>
         );
     }

@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "babel-loader": "^8.0.5",
+    "leaflet": "^1.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-leaflet": "^2.2.1",
     "react-scripts": "3.0.0",
     "styled-components": "^4.2.0"
   },
