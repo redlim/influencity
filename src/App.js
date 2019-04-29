@@ -43,7 +43,6 @@ export default class App extends Component {
                 <LabelItem value={Math.round(averageTemp)+'º'} label={'Average Temp'}/>
                 <section className="items-wrapper">
                     {listOfTemps.map((temp)=>{
-                        console.log(temp);
                         return <WeatherWidget
                             key={temp.id}
                             city={temp.name}
