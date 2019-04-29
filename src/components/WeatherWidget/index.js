@@ -21,7 +21,7 @@ class WeatherWidget extends PureComponent {
 
     render(){
         const { temp, city, clouds } = this.props;
-        const classes = `wheather-icon ${clouds ? 'cloud' : 'sun'}`;
+        const classes = `${clouds ? 'cloud' : 'sun'}`;
         return (
             <Styled.CardWrapper>
                 <div className={classes}></div>

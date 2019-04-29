@@ -32,11 +32,17 @@ class InputWidget extends PureComponent {
         this.setState({value:''});
     };
 
+    handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            this.handleClick()
+        }
+    };
+
     render(){
         const { value } = this.state;
         return (
             <Styled.InputWrapper height={56}>
-                <input type={'text'} className="city-input" value={value} onChange={this.changeHandler}/>
+                <input type={'text'} className="city-input" value={value} onChange={this.changeHandler}  onKeyDown={this.handleKeyDown}/>
                 <button className="button" onClick={this.handleClick}>Search</button>
             </Styled.InputWrapper>
         );

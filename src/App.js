@@ -7,11 +7,12 @@ export default class App extends Component {
 
     state= {
         currentTemp: '---',
-        currentCity: '---'
+        currentCity: 'Almería'
     };
 
     componentDidMount() {
-        Api.getWeatherByName('Almería').then((response)=>{
+        const { currentCity } = this.state;
+        Api.getWeatherByName(currentCity).then((response)=>{
             this.setState({currentTemp: response.main.temp, currentCity: response.name});
         })
     }
@@ -30,7 +31,7 @@ export default class App extends Component {
         return (
             <div className="App">
                 <InputWidget onClick={this.searchHandler}/>
-                <WeatherWidget city={currentCity} temp={currentTemp} clouds={parseInt(currentTemp) < 15}/>
+                <WeatherWidget city={currentCity} temp={Math.round(currentTemp)} clouds={parseInt(currentTemp) < 15}/>
             </div>
         );
     }
